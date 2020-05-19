@@ -31,17 +31,15 @@ let verificaAdminRole = ( req, res, next ) => {
 
     if ( !(usuario.role === 'ADMIN_ROLE') ) {
 
-        console.log('No es admin');
         return res.status(400).json({
             ok: false,
             err: {
-                message: 'NO es admin'  
+                message: 'El usuario no es admininstrador'  
             }
         });
 
     } else {
         
-        console.log('Si es admin');
         next();
         
     }
